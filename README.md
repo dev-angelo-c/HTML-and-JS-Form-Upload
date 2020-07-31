@@ -15,4 +15,4 @@
   Uses an html form element and all of its glory  
   
 -Option two:  
-  Uses javascript and new FormData()  
+  Uses JS and `new FormData()`  
