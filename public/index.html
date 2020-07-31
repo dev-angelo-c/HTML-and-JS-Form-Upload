@@ -25,12 +25,12 @@
       this.handleChange = this.handleChange.bind(this);
     }
 
-    fileUploadHandler(){
-      console.log(this.state);  
-      
+    fileUploadHandler(){      
       let fd = new FormData();
       fd.append("image201", this.state.file, this.state.file.name);
-      fd.append("jack", "crish");
+      
+      //add text for fun
+      fd.append("random", "text"); 
 
       //create fetch request now
       fetch("/dynamic-image", {
@@ -39,26 +39,29 @@
         body: fd
       })
       .then( res => {
+        //update state for image upload
         this.setState({uploaded: true});
-        console.log(this.state);
       })
       .catch(e => console.log("ERROR ", e));
     }
 
     handleChange(event){
       this.setState({file: event.target.files[0]});
-      console.log(this.state.file);    
     }
 
     render() {
       return (
         <div>
+
+          {/*create file upload using form element*/}
           <form action="/image" method="POST" enctype="multipart/form-data" id='form'>
             <input onChange={this.handleChange} type="file" name="image101" />
             <input type="text" name="test"/>
             <input type="submit" value="submit" name="testphoto"/>
             <hr />          
           </form>
+
+          {/*create file upload without html form element*/}
           <input onChange={this.handleChange} type="file" name="image201" />
           <button onClick={this.fileUploadHandler}>Upload</button>
         </div>
