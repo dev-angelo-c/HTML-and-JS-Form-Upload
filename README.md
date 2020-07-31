@@ -7,12 +7,12 @@
 
 #### To Begin:  
 -Open terminal  
--cd to the directory this software is in  
--npm start  
+-`cd` to the directory this software is in  
+-`npm start`  
 -point your browser to localhost:3000  
 
 -Option one:  
-  Uses a html form element and all its glory  
+  Uses an html form element and all of its glory  
   
 -Option two:  
   Uses javascript and new FormData()  
