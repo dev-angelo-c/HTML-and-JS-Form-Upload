@@ -11,3 +11,6 @@ uploads
 ./cache
 .cache
 cache
+./dist
+/dist
+dist
