@@ -2,8 +2,8 @@ console.log(" HELLO PARCEL ");
 import React, {Component} from 'react';
 import ReactDOM from "react-dom";
 
-const FormDataConatiner = require("./components/formdataupload/formdataupload");
-const FormConatiner = require("./components/formupload/formupload");
+import FormDataConatiner from "./components/formdataupload/formdataupload";
+import FormConatiner from "./components/formupload/formupload"
 
  class Test extends Component {
    constructor(props) {
