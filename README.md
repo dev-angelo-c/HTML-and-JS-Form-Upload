@@ -8,8 +8,10 @@
 #### To Begin:  
 -Open terminal  
 -cd to the directory this software is in  
--npm start  
--point your browser to localhost:3000  
+##Client  
+-within ```public/``` directory run ```parcel watch index.html```  
+##Server
+-```nodemon server.js```
 
 -Option one:  
   Uses a html form element and all its glory  

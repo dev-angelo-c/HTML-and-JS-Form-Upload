@@ -11,6 +11,8 @@ uploads
 ./cache
 .cache
 cache
+*/dist
 ./dist
 /dist
 dist
+public/dist
