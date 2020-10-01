@@ -1,9 +1,9 @@
 # fileupload
 ### Bare bones file upload with react
 
--This software does not modify file names.  
--You will need to add the extension to the file name  
--all it does is get a file to a folder. 
+- This software does not modify file names.  
+- You will need to add the extension to the file name  
+- All it does is get a file to a folder. 
 
 #### To Begin:  
 -Open terminal  
@@ -13,8 +13,8 @@
 ##Server
 -```nodemon server.js```
 
--Option one:  
-  Uses a html form element and all its glory  
+- Option one:  
+  Uses an html form element and all of its glory  
   
--Option two:  
-  Uses javascript and new FormData()  
+- Option two:  
+  Uses JS and `new FormData()`  
