@@ -6,11 +6,11 @@
 - All it does is get a file to a folder. 
 
 #### To Begin:  
--Open terminal  
--cd to the directory this software is in  
-##Client  
--within ```public/``` directory run ```parcel watch index.html```  
-##Server
+- Open terminal  
+- cd to the directory this software is in  
+## Client  
+- within ```public/``` directory run ```parcel watch index.html```  
+## Server
 -```nodemon server.js```
 
 - Option one:  
