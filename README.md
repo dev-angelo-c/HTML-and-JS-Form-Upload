@@ -1,6 +1,6 @@
 # fileupload
 ### Bare bones file upload with react
-
+- This uses the Parcel bundler.  
 - This software does not modify file names.  
 - You will need to add the extension to the file name  
 - All it does is get a file to a folder. 
