@@ -7,9 +7,12 @@
 
 #### To Begin:  
 - Open terminal  
-- cd to the directory this software is in  
+- cd to the directory this software is in
+- npm install
+
 ## Client  
 - within ```public/``` directory run ```parcel watch index.html```  
+
 ## Server
 -```nodemon server.js```
 
