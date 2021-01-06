@@ -10,6 +10,18 @@ body{
 }
 
 #main-content{
+
+  .headerBar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    .radios{
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
   #formUploadContainer{
     margin: 8px;
     border: 1px solid grey;
