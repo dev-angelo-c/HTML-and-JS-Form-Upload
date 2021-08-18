@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
-    "build": "parcel build index.html --public-url ./"
+    "build": "parcel build index.html --public-url ./dist"
   },
   "keywords": [],
   "author": "",
@@ -16,11 +16,10 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
-  
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "parcel": "latest",
     "parcel-bundler": "^1.12.4",
     "sass": "^1.26.11"
   }

@@ -1,12 +1,16 @@
 import React, { Component, useState, useEffect } from "react";
 
 function ImgPreview(props){
+
+  let { img = "",  source = "" } = props;
+  let { uploadDate = "" , size = "" } = img;
+
   return(
     <div className="card">      
-      <img src={props.source} width={`${props.size}%`}/>
+      <img src={source} width={`${size}%`}/>
       <div className="details">
-        <p>Upload Date: {props.img.uploadDate}</p>
-        <p>Size: {props.img.size}</p>        
+        <p>Upload Date: {uploadDate}</p>
+        <p>Size: {size}</p>        
       </div>
     </div>
   )
