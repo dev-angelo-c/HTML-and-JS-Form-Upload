@@ -5,8 +5,8 @@ function ImgPreview(props){
     <div className="card">      
       <img src={props.source} width={`${props.size}%`}/>
       <div className="details">
-        <p>Upload Date: {props.img.uploadDate}</p>
-        <p>Size: {props.img.size}</p>        
+        <p>Upload Date: {props.uploadDate}</p>
+        <p>Size: {props.size}</p>        
       </div>
     </div>
   )

@@ -1,16 +1,12 @@
 console.log(" HELLO PARCEL ");
-import React, {
-  Component,
-  useState,
-  useEffect
-} from 'react';
-import ReactDOM from "react-dom";
+import React, { Component }from 'react';
+// import ReactDOM from "react-dom";
 
 import FormDataConatiner from "./components/formdataupload/formdataupload";
 import FormConatiner from "./components/formupload/formupload";
 
 import Header from "./components/header/headerBar";
-import ImgPreview from "./components/previews/card";
+import ImgPreview from "./components/previews/ImgPreview";
 
 class Test extends Component {
   constructor(props) {
@@ -26,10 +22,15 @@ class Test extends Component {
 
   fileUploadHandler() {
     let fd = new FormData();
+
+    console.log(" FD : ", fd);
+
     fd.append("image201", this.state.file, this.state.file.name);
 
     //add text for fun
     fd.append("random", "text");
+
+    console.log(" FD append complete ", fd);
 
     //create fetch request now
     fetch("/dynamic-image", {
@@ -47,6 +48,9 @@ class Test extends Component {
   }
 
   handleChange(event) {
+
+    console.log(" eventTarget File: ", event.target.file);
+
     this.setState({
       file: event.target.files[0]
     });
@@ -54,28 +58,33 @@ class Test extends Component {
 
   render() {
     return ( 
-    <div class = "container">
-      <div id = 'main-content'> 
-      {/*create file upload using form element*/ } 
-      <Header / >
-      <FormConatiner 
-        handleChange = {
-          this.handleChange
-        }/>
+      <div className = "container">
+        <div id = 'main-content'> 
+          
+          <Header />
+          
+          {/*create file upload using form element*/ } 
+          <FormConatiner 
+            handleChange = {
+              this.handleChange
+            }/>
 
-      {/*create file upload without html form element*/ } 
-      <FormDataConatiner 
-        handleChange = {
-          this.handleChange
-        }
-        fileUploadHandler = {
-          this.fileUploadHandler
-        }/> 
+          {/*create file upload without html form element*/ } 
+          <FormDataConatiner 
+            handleChange = {
+              this.handleChange
+            }
+            fileUploadHandler = {
+              this.fileUploadHandler
+            }/> 
+        </div>
+        
+        {/*Image Preview*/}
+        <div>
+          <ImgPreview uploadDate={Date.now()} size={2000} />
+        </div> 
+      
       </div>
-      <div>
-        <ImgPreview />
-      </div> 
-    </div>
     );
   }
 }
