@@ -2,6 +2,8 @@ import React, { Component, useState, useEffect } from "react";
 
 function ImgPreview(props){
 
+  console.log(" PROPS: ", props);
+
   let { img = "",  source = "" } = props;
   let { uploadDate = "" , size = "" } = img;
 
