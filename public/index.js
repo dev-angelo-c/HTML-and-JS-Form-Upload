@@ -1,57 +1,35 @@
 console.log(" HELLO PARCEL ");
-import React, {Component} from 'react';
+import React, { Component, useState, useEffect }from 'react';
 import ReactDOM from "react-dom";
 
-import FormDataConatiner from "./components/formdataupload/formdataupload";
-import FormConatiner from "./components/formupload/formupload"
+import { FormDataUpload } from "./components/formdataupload/formdataupload";
+import FormConatiner from "./components/formupload/formupload";
 
- class Test extends Component {
-   constructor(props) {
-     super(props);
-     this.state = {
-       uploaded: false,
-       file: null,
-       filename: null,
-     };
-     this.fileUploadHandler = this.fileUploadHandler.bind(this);
-     this.handleChange = this.handleChange.bind(this);
-   }
+import Header from "./components/header/headerBar";
+import ImgPreview from "./components/previews/ImgPreview";
 
-   fileUploadHandler() {
-     let fd = new FormData();
-     fd.append("image201", this.state.file, this.state.file.name);
+function Test(){
+  
+  return ( 
+      <div className = "container">
+        <div id = 'main-content'> 
+          
+          <Header />
+          
+          {/*create file upload using form element*/ } 
+          <FormConatiner />
 
-     //add text for fun
-     fd.append("random", "text");
+          {/*create file upload without html form element*/ } 
+          <FormDataUpload /> 
+        </div>
+        
+        {/*Image Preview*/}
+        <div>
+          <ImgPreview uploadDate={Date.now()} size={2000} />
+        </div> 
+      
+      </div>
+    );
+  }
 
-     //create fetch request now
-     fetch("/dynamic-image", {
-       method: "POST",
-       data: fd,
-       body: fd,
-     })
-       .then((res) => {
-         //update state for image upload
-         this.setState({ uploaded: true });
-       })
-       .catch((e) => console.log("ERROR ", e));
-   }
-
-   handleChange(event) {
-     this.setState({ file: event.target.files[0] });
-   }
-
-   render() {
-     return (
-       <div id='main-content'>
-         {/*create file upload using form element*/}
-        < FormConatiner handleChange={this.handleChange}/>
-
-         {/*create file upload without html form element*/}
-        < FormDataConatiner handleChange={this.handleChange} fileUploadHandler={this.fileUploadHandler}/ >
-       </div>
-     );
-   }
- }  
-
-ReactDOM.render(<Test />, document.getElementById("app"));
+ReactDOM.render( < Test / > , document.getElementById("app"));

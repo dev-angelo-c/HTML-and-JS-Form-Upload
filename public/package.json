@@ -2,26 +2,31 @@
   "name": "public",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "src/index.js",
+  "main": "dist/main.js",
   "type": "module",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html",
-    "build": "parcel build index.html --public-url ./"
+    "clean": "rm -rf ./dist/",
+    "start": "rm -rf ./dist/ && parcel index.html",
+    "build": "parcel build index.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "latest",
+    "react-dom": "latest"
   },
-  
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.26.11"
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "cssnano": "^5.0.7",
+    "parcel": "latest",
+    "parcel-bundler": "latest",
+    "sass": "^1.38.0"
   }
 }

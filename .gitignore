@@ -16,3 +16,6 @@ cache
 /dist
 dist
 public/dist
+./testImages
+/testImages
+testImages
