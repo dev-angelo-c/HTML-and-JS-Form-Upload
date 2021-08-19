@@ -5,16 +5,15 @@ export const fileUploadHandler = function(props) {
 
   console.log(" PROPS ", props);
 
-  let {file = "N/A "} = props;
-  let {name = "N/A "} = file;
+  let {file = "N/A ", name = "N/A "} = props;
+  
   let fd = new FormData();
   try{
     console.log(" FD : ", fd);
 
-    fd.append("image201", file, name);
+    let blob = new Blob([file])
 
-    //add text for fun
-    fd.append("random", "text");
+    fd.append("image201", blob);
 
     console.log(" FD append complete ", fd);
   }catch(e){
