@@ -1,4 +1,3 @@
-## Currently broken as updates are made
 # fileupload
 ### Bare bones file upload with react
 - This uses the Parcel bundler.  
