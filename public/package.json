@@ -8,8 +8,8 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm dist/bundle.js",
-    "start": "parcel index.html",
+    "clean": "rm -rf ./dist/",
+    "start": "rm -rf ./dist/ && parcel index.html",
     "build": "parcel build index.html"
   },
   "keywords": [],

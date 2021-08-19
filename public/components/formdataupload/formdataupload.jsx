@@ -1,30 +1,65 @@
 import React, {useState, useEffect } from "react";
 
-function fdUpload(props){
+
+export const fileUploadHandler = function(props) {
+
+  console.log(" PROPS ", props);
+
+  let {file = "N/A "} = props;
+  let {name = "N/A "} = file;
+  let fd = new FormData();
+  try{
+    console.log(" FD : ", fd);
+
+    fd.append("image201", file, name);
+
+    //add text for fun
+    fd.append("random", "text");
+
+    console.log(" FD append complete ", fd);
+  }catch(e){
+    console.log(" ERROR : ", e);
+  }
+  //create fetch request now
+  fetch("/dynamic-image", {
+      method: "POST",
+      data: fd,
+      body: fd,
+    })
+    .then((res) => {
+      //update state for image upload
+      this.setState({
+        uploaded: true
+      });
+    })
+    .catch((e) => console.log("ERROR ", e));
+}
+
+export const updateFileName = function(e){
+  console.log(" E: ", e.target);
+  setFileName(e.target.value);
+  console.log(" FILE NAME ", fileName);
+}
+
+export const FormDataUpload = function(){
 
   let [fileName, setFileName] = useState("");
   let [fileType, setFileType] = useState(".png");
+  
 
-  let {handleChange, fileUploadHandler } = props;
-
-  function updateFileName(e){
-    setFileName(e.target.value);
-    console.log(" FILE NAME ", fileName);
-  }
-
+  console.log(" FILENAME ", fileName);
   return (
     <div id="formDataUploadContainer" className="uploadContainer" >
       <h2>Upload Using Form Data</h2>
-      <input onChange={ setFileName } type="file" name="image201" />
-      <input onChange={ updateFileName } id="formFileName" name="formFileName" />
-      <button onClick={fileUploadHandler}>Upload</button>
+      <label htmlFor="image201">{fileName}###</label>
+      <input onChange={ (e) => { console.log("E ", e); setFileType(e.target.files[0]) } } type="file" name="image201" />      
+      <input onChange={ updateFileName } id="formFileName" name="formFileName" value={fileName} />
+      <button onClick={ (e) => fileUploadHandler(fileType) }>Upload</button>
       <div>
         <span>File Name: {fileName}</span>
         <p>Name Length: {fileName.length}</p>
-        <span>{fileName.length >= 1 ? "Extension" : null}</span>
+        <span>Extension</span>
       </div>
     </div>
   )
 }
-
-module.exports = fdUpload;
