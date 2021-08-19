@@ -28,9 +28,7 @@ export const fileUploadHandler = function(props) {
     })
     .then((res) => {
       //update state for image upload
-      this.setState({
-        uploaded: true
-      });
+      console.log(" RESPONSE ", res.body);
     })
     .catch((e) => console.log("ERROR ", e));
 }
