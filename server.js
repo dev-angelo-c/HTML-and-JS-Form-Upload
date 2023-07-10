@@ -11,6 +11,7 @@ app.use(express.static("./public/dist"));
 app.get("/yay", (req, res, next) => {
   res.status(200).send(" I LOVE YOU ");
 })
+
 //used for html form upload
 app.post("/image", 
   upload.single('image101'), 
